@@ -1,0 +1,13 @@
+version: '1.0'
+
+services:
+  app:
+    build: .
+    command: python app.py
+    ports:
+       - "7860:443"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DATABRICKS_HOST=<setme>
+      - DATABRICKS_TOKEN=<setme>
+    restart: always
